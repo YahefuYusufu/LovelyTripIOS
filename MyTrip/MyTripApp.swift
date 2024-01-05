@@ -10,23 +10,23 @@ import SwiftData
 
 @main
 struct MyTripApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(sharedModelContainer)
-    }
+//   let container: ModelContainer
+   var body: some Scene {
+      WindowGroup {
+         TripsView()
+      }
+//      .modelContainer(container)
+      .modelContainer(for: Trip.self)
+   }
+   
+   init() {
+//      let schema = Schema([Trip.self])
+//      let config = ModelConfiguration("MyTrips",schema: schema)
+//      do {
+//         container = try ModelContainer(for: schema, configurations: config)
+//      } catch {
+//         fatalError("Could not configure the Container...!")
+//      }
+      print(URL.applicationSupportDirectory.path(percentEncoded: false))
+   }
 }
