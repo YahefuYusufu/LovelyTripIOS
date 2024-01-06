@@ -14,45 +14,38 @@ struct NewTripView: View {
    @State private var country = ""
    @State private var city = ""
    
-    var body: some View {
-       NavigationStack {
-          VStack {
-             HStack {
-                TextField("Country",text: $country)
-                   .textFieldStyle(.roundedBorder)
-                   .foregroundColor(.secondary)
-                TextField("City",text: $city)
-                   .textFieldStyle(.roundedBorder)
-                   .foregroundColor(.secondary)
-                                   
-             }
-             Button("Plan It") {
-                let newTrip = Trip(country: country, city: city)
-                context.insert(newTrip)
-                dismiss()
-             }
-             .frame(maxWidth: .infinity, alignment: .trailing)
-             .buttonStyle(.borderedProminent)
-             .padding(.vertical)
-             .disabled(country.isEmpty || city.isEmpty)
-             .navigationTitle("New Trip")
-             .navigationBarTitleDisplayMode(.automatic)
-             .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                   Button("Cancel") {
-                      dismiss()
-                   }
-                   .buttonStyle(.borderedProminent)
-                }
-             }
-          }
-          .formStyle(.grouped)
-          .padding()
-       }
-    }
-
+   var body: some View {
+      NavigationStack {
+         Form{
+            TextField("Country",text: $country)
+            TextField("City",text: $city)
+            Button("Plan It") {
+               let newTrip = Trip(country: country, city: city)
+               context.insert(newTrip)
+               dismiss()
+            }
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .buttonStyle(.borderedProminent)
+            .padding(.vertical)
+            .disabled(country.isEmpty || city.isEmpty)
+            .navigationTitle("Where you been?")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+               ToolbarItem(placement: .topBarTrailing) {
+                  Button() {
+                     dismiss()
+                  } label: {
+                     Image(systemName: "xmark.octagon.fill")
+                  }
+                  .imageScale(.large)
+               }
+            }
+         }
+         
+      }
+   }
+   
 }
-
 #Preview {
-    NewTripView()
+   NewTripView()
 }

@@ -15,29 +15,66 @@ struct TripsView: View {
    
    var body: some View {
       NavigationStack {
-         VStack {
-            Text("test")
+         Group {
+            if trips.isEmpty {
+               ContentUnavailableView("You don't have any trip yet!", systemImage: "flag.checkered")
+            } else {
+               List {
+                  ForEach(trips) { trip in
+                     NavigationLink {
+                        Text(trip.country)
+                     } label: {
+                        HStack {
+                           trip.icon
+                           VStack {
+                              Text(trip.country).foregroundStyle(.green)
+                              Text(trip.city).foregroundStyle(.secondary)
+                              if let satisfaction = trip.satisfaction {
+                                 HStack {
+                                    ForEach(1..<satisfaction, id:\.self) { _ in
+                                       Image(systemName: "star.fill")
+                                          .imageScale(.medium)
+                                          .foregroundStyle(.green)
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+                  .onDelete { indexSet in
+                     indexSet.forEach { index in
+                        let trip = trips[index]
+                        context.delete(trip)
+                     }
+                  }
+               }
+               .listStyle(.plain)
+            }
          }
-         .padding()
-         .navigationTitle("Add your trip.")
+         .navigationTitle("My trips")
          .toolbar {
             Button {
                createNewTrip = true
             } label: {
-               Image(systemName: "plus")
+               Image(systemName: "plus.circle.fill")
+                  .imageScale(.large)
             }
          }
          .sheet(isPresented: $createNewTrip) {
             NewTripView()
-               .presentationDetents([.medium])
+               .presentationDetents([.medium,.large,.fraction(0.75)])
+               .presentationCornerRadius(28)
          }
       }
    }
 }
 
 
+
+
+
 #Preview {
    TripsView()
-      .modelContainer(for: Trip.self,inMemory: true)
-   
+      .modelContainer(for: Trip.self, inMemory: true)
 }

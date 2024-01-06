@@ -14,6 +14,7 @@
 		35200F4F2B48840700FF36E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */; };
 		35200F5B2B48939500FF36E0 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F5A2B48939500FF36E0 /* TripsView.swift */; };
 		35200F5D2B489AF000FF36E0 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F5C2B489AF000FF36E0 /* NewTripView.swift */; };
+		35C14EB02B49754F003CCDDD /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C14EAF2B49754E003CCDDD /* RatingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35200F5A2B48939500FF36E0 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		35200F5C2B489AF000FF36E0 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
+		35C14EAF2B49754E003CCDDD /* RatingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				35200F472B48840300FF36E0 /* MainView.swift */,
 				35200F5A2B48939500FF36E0 /* TripsView.swift */,
 				35200F5C2B489AF000FF36E0 /* NewTripView.swift */,
+				35C14EAF2B49754E003CCDDD /* RatingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35200F482B48840300FF36E0 /* MainView.swift in Sources */,
+				35C14EB02B49754F003CCDDD /* RatingsView.swift in Sources */,
 				35200F4A2B48840300FF36E0 /* Trip.swift in Sources */,
 				35200F462B48840300FF36E0 /* MyTripApp.swift in Sources */,
 				35200F5B2B48939500FF36E0 /* TripsView.swift in Sources */,
