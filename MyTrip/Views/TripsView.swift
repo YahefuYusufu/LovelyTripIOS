@@ -26,7 +26,7 @@ struct TripsView: View {
                      } label: {
                         HStack {
                            trip.icon
-                           VStack {
+                           VStack(alignment: .leading) {
                               Text(trip.country).foregroundStyle(.green)
                               Text(trip.city).foregroundStyle(.secondary)
                               if let satisfaction = trip.satisfaction {
