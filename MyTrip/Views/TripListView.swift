@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct TripsView: View {
+struct TripListView: View {
    @Environment(\.modelContext) private var context
    @Query(sort: \Trip.country) private var trips: [Trip]
    @State private var createNewTrip = false
@@ -24,15 +24,15 @@ struct TripsView: View {
                      NavigationLink {
                         Text(trip.country)
                      } label: {
-                        HStack {
+                        HStack(spacing: 10) {
                            trip.icon
                            VStack(alignment: .leading) {
                               Text(trip.country).foregroundStyle(.green)
                               Text(trip.city).foregroundStyle(.secondary)
                               if let satisfaction = trip.satisfaction {
                                  HStack {
-                                    ForEach(1..<satisfaction, id:\.self) { _ in
-                                       Image(systemName: "star.fill")
+                                    ForEach(0..<satisfaction, id: \.self) { _ in
+                                       Image(systemName: "hand.thumbsup.fill")
                                           .imageScale(.medium)
                                           .foregroundStyle(.green)
                                     }
@@ -75,6 +75,6 @@ struct TripsView: View {
 
 
 #Preview {
-   TripsView()
+   TripListView()
       .modelContainer(for: Trip.self, inMemory: true)
 }

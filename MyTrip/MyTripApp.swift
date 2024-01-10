@@ -13,7 +13,7 @@ struct MyTripApp: App {
 //   let container: ModelContainer
    var body: some Scene {
       WindowGroup {
-         TripsView()
+         TripListView()
       }
 //      .modelContainer(container)
       .modelContainer(for: Trip.self)
