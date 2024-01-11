@@ -61,7 +61,6 @@
 			children = (
 				35200F552B4887C800FF36E0 /* Views */,
 				35200F582B48881C00FF36E0 /* ViewModels */,
-				35200F572B4887E200FF36E0 /* Extentions */,
 				35200F592B48886800FF36E0 /* Other */,
 				35200F452B48840300FF36E0 /* MyTripApp.swift */,
 				35200F4D2B48840700FF36E0 /* Preview Content */,
@@ -86,13 +85,6 @@
 				358E3D632B4EA77800F8544F /* RitingsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		35200F572B4887E200FF36E0 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 		35200F582B48881C00FF36E0 /* ViewModels */ = {
