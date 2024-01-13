@@ -22,13 +22,20 @@ struct TripListView: View {
                List {
                   ForEach(trips) { trip in
                      NavigationLink {
-                        Text(trip.country)
+                        EditView(trip:trip)
                      } label: {
                         HStack(spacing: 10) {
                            trip.icon
+                              .bold()
+                              .foregroundStyle(Color.white)
+                              .padding()
+                              .background(Color.cyan)
+                              .cornerRadius(10)
+                              
+                           
                            VStack(alignment: .leading) {
-                              Text(trip.country).foregroundStyle(.green)
-                              Text(trip.city).foregroundStyle(.secondary)
+                              Text(trip.country).foregroundStyle(.green).font(.title).bold()
+                              Text(trip.city).foregroundStyle(.secondary).font(.title2)
                               if let satisfaction = trip.satisfaction {
                                  HStack {
                                     ForEach(0..<satisfaction, id: \.self) { _ in
@@ -63,7 +70,7 @@ struct TripListView: View {
          }
          .sheet(isPresented: $createNewTrip) {
             NewTripView()
-               .presentationDetents([.medium,.large,.fraction(0.75)])
+               .presentationDetents([.medium,.fraction(0.75)])
                .presentationCornerRadius(28)
          }
       }
