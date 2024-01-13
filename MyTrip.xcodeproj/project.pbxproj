@@ -16,6 +16,8 @@
 		35200F5D2B489AF000FF36E0 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F5C2B489AF000FF36E0 /* NewTripView.swift */; };
 		3546B0FA2B52CE0A00837BD0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546B0F92B52CE0A00837BD0 /* EditView.swift */; };
 		358E3D642B4EA77800F8544F /* RitingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358E3D632B4EA77800F8544F /* RitingsView.swift */; };
+		35D7A9F22B52FCCE000FD735 /* TripSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7A9F12B52FCCE000FD735 /* TripSample.swift */; };
+		35D7A9F42B5300FC000FD735 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		35200F5C2B489AF000FF36E0 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		3546B0F92B52CE0A00837BD0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		358E3D632B4EA77800F8544F /* RitingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitingsView.swift; sourceTree = "<group>"; };
+		35D7A9F12B52FCCE000FD735 /* TripSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSample.swift; sourceTree = "<group>"; };
+		35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */,
+				35D7A9F12B52FCCE000FD735 /* TripSample.swift */,
+				35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -176,10 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D7A9F42B5300FC000FD735 /* PreviewContainer.swift in Sources */,
 				35200F482B48840300FF36E0 /* MainView.swift in Sources */,
 				35200F4A2B48840300FF36E0 /* Trip.swift in Sources */,
 				35200F462B48840300FF36E0 /* MyTripApp.swift in Sources */,
 				358E3D642B4EA77800F8544F /* RitingsView.swift in Sources */,
+				35D7A9F22B52FCCE000FD735 /* TripSample.swift in Sources */,
 				3546B0FA2B52CE0A00837BD0 /* EditView.swift in Sources */,
 				35200F5B2B48939500FF36E0 /* TripListView.swift in Sources */,
 				35200F5D2B489AF000FF36E0 /* NewTripView.swift in Sources */,

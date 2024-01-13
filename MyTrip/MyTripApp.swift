@@ -15,7 +15,6 @@ struct MyTripApp: App {
       WindowGroup {
          TripListView()
       }
-//      .modelContainer(container)
       .modelContainer(for: Trip.self)
    }
    

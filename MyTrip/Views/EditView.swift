@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct EditView: View {
-      let trip: Trip
+   let trip: Trip
    @Environment(\.dismiss) private var dismiss
    @State private var status = Status.inPlan
    @State private var satisfiction: Int?
-//   @State private var totalDays: Int?
    @State private var country = ""
    @State private var city = ""
    @State private var summary = ""
@@ -130,7 +129,7 @@ struct EditView: View {
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
          if changed {
-             Button("Update") {
+            Button("Update") {
                trip.status = status
                trip.satisfaction = satisfiction
                trip.country = country
@@ -141,10 +140,10 @@ struct EditView: View {
                trip.tripCompleted = tripCompleted
                dismiss()
             }
-             .buttonStyle(.bordered)
-             .bold()
+            .buttonStyle(.bordered)
+            .bold()
+         }
       }
-   }
       .onAppear {
          status = trip.status
          satisfiction = trip.satisfaction
@@ -170,7 +169,12 @@ struct EditView: View {
 }
 
 
-//
+
 //#Preview {
-//    EditView()
+//   let preview = Preview(Trip.self)
+//   return NavigationStack {
+//      EditView(trip: Trip.sampleTrips[4])
+//         .modelContainer(preview.container)
+//   }
+//   
 //}
