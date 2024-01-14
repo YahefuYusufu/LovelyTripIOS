@@ -130,7 +130,7 @@ struct EditView: View {
       .toolbar {
          if changed {
             Button("Update") {
-               trip.status = status
+               trip.status = status.rawValue
                trip.satisfaction = satisfiction
                trip.country = country
                trip.city = city
@@ -145,7 +145,7 @@ struct EditView: View {
          }
       }
       .onAppear {
-         status = trip.status
+         status = Status(rawValue: trip.status)!
          satisfiction = trip.satisfaction
          country = trip.country
          city = trip.city
@@ -157,7 +157,7 @@ struct EditView: View {
    }
    
    var changed: Bool {
-      status != trip.status
+      status != Status(rawValue: trip.status)!
       || satisfiction != trip.satisfaction
       || country != trip.country
       || city != trip.city
@@ -170,11 +170,10 @@ struct EditView: View {
 
 
 
-//#Preview {
-//   let preview = Preview(Trip.self)
-//   return NavigationStack {
-//      EditView(trip: Trip.sampleTrips[4])
-//         .modelContainer(preview.container)
-//   }
-//   
-//}
+#Preview {
+   let preview = Preview(Trip.self)
+   return NavigationStack {
+      EditView(trip: Trip.sampleTrips[4])
+         .modelContainer(preview.container)
+   }
+}

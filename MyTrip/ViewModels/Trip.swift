@@ -18,7 +18,7 @@ class Trip {
    var tripCompleted: Date
    var totalDays: Int?
    var satisfaction: Int?
-   var status: Status
+   var status: Status.RawValue
    
    init(
       country: String,
@@ -39,14 +39,12 @@ class Trip {
       self.tripCompleted = tripCompleted
       self.totalDays = totalDays
       self.satisfaction = satisfaction
-      self.status = status
+      self.status = status.rawValue
    }
    
    
-   
-   
    var icon: Image {
-      switch status {
+      switch Status(rawValue: status)! {
          case .inPlan:
             Image(systemName:"airplane.departure")
          case .inProgress:
@@ -55,10 +53,6 @@ class Trip {
             Image(systemName: "house")
       }
    }
-   
-   
-   
-
 }
 
 enum Status: Int, Identifiable, Codable, CaseIterable  {
