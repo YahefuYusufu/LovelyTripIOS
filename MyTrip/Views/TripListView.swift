@@ -49,6 +49,7 @@ struct TripListView: View {
                   .presentationCornerRadius(28)
             }
       }
+    
    }
 }
 
