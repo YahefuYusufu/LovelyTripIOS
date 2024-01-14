@@ -17,6 +17,8 @@
 		3546B0FA2B52CE0A00837BD0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546B0F92B52CE0A00837BD0 /* EditView.swift */; };
 		358E3D642B4EA77800F8544F /* RitingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358E3D632B4EA77800F8544F /* RitingsView.swift */; };
 		35AD98182B540BC8008F9688 /* TripList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD98172B540BC8008F9688 /* TripList.swift */; };
+		35AD981A2B5435A1008F9688 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD98192B5435A1008F9688 /* Quote.swift */; };
+		35AD981C2B543784008F9688 /* QuetesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD981B2B543784008F9688 /* QuetesList.swift */; };
 		35D7A9F22B52FCCE000FD735 /* TripSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7A9F12B52FCCE000FD735 /* TripSample.swift */; };
 		35D7A9F42B5300FC000FD735 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +35,8 @@
 		3546B0F92B52CE0A00837BD0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		358E3D632B4EA77800F8544F /* RitingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitingsView.swift; sourceTree = "<group>"; };
 		35AD98172B540BC8008F9688 /* TripList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList.swift; sourceTree = "<group>"; };
+		35AD98192B5435A1008F9688 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		35AD981B2B543784008F9688 /* QuetesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuetesList.swift; sourceTree = "<group>"; };
 		35D7A9F12B52FCCE000FD735 /* TripSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSample.swift; sourceTree = "<group>"; };
 		35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +99,7 @@
 				35200F5C2B489AF000FF36E0 /* NewTripView.swift */,
 				358E3D632B4EA77800F8544F /* RitingsView.swift */,
 				3546B0F92B52CE0A00837BD0 /* EditView.swift */,
+				35AD981B2B543784008F9688 /* QuetesList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				35200F492B48840300FF36E0 /* Trip.swift */,
+				35AD98192B5435A1008F9688 /* Quote.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -191,10 +197,12 @@
 				35200F462B48840300FF36E0 /* MyTripApp.swift in Sources */,
 				358E3D642B4EA77800F8544F /* RitingsView.swift in Sources */,
 				35D7A9F22B52FCCE000FD735 /* TripSample.swift in Sources */,
+				35AD981C2B543784008F9688 /* QuetesList.swift in Sources */,
 				35AD98182B540BC8008F9688 /* TripList.swift in Sources */,
 				3546B0FA2B52CE0A00837BD0 /* EditView.swift in Sources */,
 				35200F5B2B48939500FF36E0 /* TripListView.swift in Sources */,
 				35200F5D2B489AF000FF36E0 /* NewTripView.swift in Sources */,
+				35AD981A2B5435A1008F9688 /* Quote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

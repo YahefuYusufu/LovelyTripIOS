@@ -14,7 +14,7 @@ struct EditView: View {
    @State private var satisfiction: Int?
    @State private var country = ""
    @State private var city = ""
-   @State private var summary = ""
+   @State private var sysnopsis = ""
    @State private var tripAdded = Date.distantPast
    @State private var tripStarted = Date.distantPast
    @State private var tripCompleted = Date.distantPast
@@ -119,9 +119,19 @@ struct EditView: View {
          }
          Divider()
          Text("Summary").foregroundStyle(.secondary).bold()
-         TextEditor(text: $summary)
+         TextEditor(text: $sysnopsis)
             .padding(5)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
+         
+         NavigationLink {
+            QuetesList(trip: trip)
+         } label: {
+            let count = trip.quetos?.count ?? 0
+            Label("^[\(count) Place](inflect: true)", systemImage: "paperplane.fill")
+         }
+         .buttonStyle(.bordered)
+         .frame(maxWidth: .infinity, alignment: .trailing)
+         .padding(.horizontal)
       }
       .padding()
       .textFieldStyle(.roundedBorder)
@@ -134,7 +144,7 @@ struct EditView: View {
                trip.satisfaction = satisfiction
                trip.country = country
                trip.city = city
-               trip.summary = summary
+               trip.sysnopsis = sysnopsis
                trip.tripAdded = tripAdded
                trip.tripStarted = tripStarted
                trip.tripCompleted = tripCompleted
@@ -149,7 +159,7 @@ struct EditView: View {
          satisfiction = trip.satisfaction
          country = trip.country
          city = trip.city
-         summary = trip.summary
+         sysnopsis = trip.sysnopsis
          tripAdded = trip.tripAdded
          tripStarted = trip.tripStarted
          tripCompleted = trip.tripCompleted
@@ -161,7 +171,7 @@ struct EditView: View {
       || satisfiction != trip.satisfaction
       || country != trip.country
       || city != trip.city
-      || summary != trip.summary
+      || sysnopsis != trip.sysnopsis
       || tripAdded != trip.tripAdded
       || tripStarted != trip.tripStarted
       || tripCompleted != trip.tripCompleted

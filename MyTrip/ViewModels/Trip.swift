@@ -12,34 +12,39 @@ import SwiftData
 class Trip {
    var country: String
    var city: String
-   var summary: String = ""
+   @Attribute(originalName: "summary")
+   var sysnopsis: String
    var tripAdded: Date
    var tripStarted: Date
    var tripCompleted: Date
    var totalDays: Int?
    var satisfaction: Int?
    var status: Status.RawValue
+   @Relationship(deleteRule: .cascade)
+   var quetos: [Quote]?
    
    init(
       country: String,
       city: String,
-      summary: String = "",
+      sysnopsis: String = "",
       tripAdded: Date = Date.now,
       tripStarted: Date = Date.distantPast,
       tripCompleted: Date = Date.distantPast,
       totalDays: Int? = nil,
       satisfaction: Int? = nil,
       status: Status = .inPlan
+      
    ) {
       self.country = country
       self.city = city
-      self.summary = summary
+      self.sysnopsis = sysnopsis
       self.tripAdded = tripAdded
       self.tripStarted = tripStarted
       self.tripCompleted = tripCompleted
       self.totalDays = totalDays
       self.satisfaction = satisfaction
       self.status = status.rawValue
+
    }
    
    
