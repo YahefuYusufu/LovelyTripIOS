@@ -32,9 +32,9 @@ struct TripListView: View {
          }
          .pickerStyle(.palette)
          .padding()
-         TripList(sorting: sorting, filterString: filter)
-            .searchable(text: $filter,prompt: Text("Filter on Country or City..."))
-            .navigationTitle("My trips")
+            TripList(sorting: sorting, filterString: filter)
+               .searchable(text: $filter,prompt: Text("Filter on Country or City..."))
+               .navigationTitle("My trips")
             .toolbar {
                Button {
                   createNewTrip = true

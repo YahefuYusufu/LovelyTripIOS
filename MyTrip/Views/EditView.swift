@@ -22,13 +22,13 @@ struct EditView: View {
    
    var body: some View {
       HStack() {
-         Spacer()
          Text("Status")
             .padding()
             .background(Color.cyan)
             .foregroundColor(Color.white)
             .bold()
             .cornerRadius(15)
+         Spacer()
          Picker("Status",selection: $status) {
             ForEach(Status.allCases) { status in
                Text(status.desc).tag(status)
@@ -117,12 +117,6 @@ struct EditView: View {
          } label: {
             Text("City").foregroundStyle(.secondary).bold()
          }
-         Divider()
-         Text("Summary").foregroundStyle(.secondary).bold()
-         TextEditor(text: $sysnopsis)
-            .padding(5)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
-         
          NavigationLink {
             QuetesList(trip: trip)
          } label: {
@@ -132,6 +126,13 @@ struct EditView: View {
          .buttonStyle(.bordered)
          .frame(maxWidth: .infinity, alignment: .trailing)
          .padding(.horizontal)
+
+         Divider()
+         Text("Summary").foregroundStyle(.secondary).bold()
+         TextEditor(text: $sysnopsis)
+            .padding(5)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
+         
       }
       .padding()
       .textFieldStyle(.roundedBorder)
