@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EditView: View {
    let trip: Trip
+   @Environment(\.modelContext) private var context
    @Environment(\.dismiss) private var dismiss
    @State private var status = Status.inPlan
    @State private var satisfiction: Int?
@@ -132,6 +133,8 @@ struct EditView: View {
          TextEditor(text: $sysnopsis)
             .padding(5)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
+          .bold()
+         
          
       }
       .padding()
