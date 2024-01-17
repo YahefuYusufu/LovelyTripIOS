@@ -54,6 +54,19 @@ struct GenresView: View {
                            Text(genre.name)
                      }
                   }
+                  .onDelete(perform: { indexSet in
+                     indexSet.forEach { index in
+                        if let bookGenres = trip.genres,
+                           bookGenres.contains(genres[index]),
+                           let bookGenreIndex = bookGenres.firstIndex(where: {
+                              $0.id == genres[index].id}) {
+                           trip.genres?.remove(at: bookGenreIndex)
+                        }
+                        context.delete(genres[index])
+                        
+                     }
+                     
+                  })
                   LabeledContent {
                      Button {
                         newGenre.toggle()
@@ -104,8 +117,9 @@ struct GenresView: View {
    let preview = Preview(Trip.self)
    let trips = Trip.sampleTrips
    let genres = Genre.sampleGenres
-   preview.addExamples(examples: Genre.sampleGenres)
-   preview.addExamples(examples: Trip.sampleTrips)
+   preview.addExamples(trips)
+   preview.addExamples(genres)
+   //have some issue with this previews ,genres
    trips[1].genres?.append(genres[0])
    return GenresView(trip: trips[1])
       .modelContainer(preview.container)

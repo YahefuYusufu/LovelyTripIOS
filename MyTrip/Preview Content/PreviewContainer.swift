@@ -20,7 +20,7 @@ struct Preview {
       }
    }
    
-   func addExamples(examples: [any PersistentModel]) {
+   func addExamples(_ examples: [any PersistentModel]) {
       Task { @MainActor in
          examples.forEach { example in
             container.mainContext.insert(example)

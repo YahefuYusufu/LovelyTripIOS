@@ -59,7 +59,10 @@ struct TripListView: View {
 
 #Preview {
    let preview = Preview(Trip.self)
-   preview.addExamples(examples: Trip.sampleTrips)
+   let trips = Trip.sampleTrips
+   let genres = Genre.sampleGenres
+   preview.addExamples(trips)
+   preview.addExamples(genres)
    return TripListView()
       .modelContainer(preview.container)
 }

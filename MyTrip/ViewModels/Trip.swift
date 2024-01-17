@@ -22,6 +22,8 @@ class Trip {
    var status: Status.RawValue
    @Relationship(deleteRule: .cascade)
    var quetos: [Quote]?
+   @Relationship(inverse: \Genre.trips)
+   var genres: [Genre]?
    
    init(
       country: String,

@@ -49,12 +49,13 @@ struct TripList: View {
                         Button("",systemImage: "trash.fill",role: .destructive) {
                            context.delete(trip)
                      }
+                        .foregroundStyle(Color.gray)
                        
                      }
                      Image("firstPage")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 80, height: 140, alignment: .top)
+                        .frame(width: 80, height: 98, alignment: .top)
                      HStack(){
                         Text(trip.country).bold()
                         Text(trip.city).foregroundStyle(.secondary).font(.caption)
@@ -66,6 +67,13 @@ struct TripList: View {
                                  .imageScale(.medium)
                                  .foregroundStyle(Color.green)
                                  .padding(.vertical,3)
+                           }
+                        }
+                     }
+                     if let genres = trip.genres {
+                        ViewThatFits {
+                           ScrollView(.horizontal,showsIndicators: false) {
+                              GenresStackView(genres: genres)
                            }
                         }
                      }
@@ -90,7 +98,7 @@ struct TripList: View {
 
 #Preview {
    let preview = Preview(Trip.self)
-   preview.addExamples(examples: Trip.sampleTrips)
+   preview.addExamples(Trip.sampleTrips)
    return NavigationStack {
       TripList(sorting: .status,filterString: "")
    }

@@ -20,7 +20,7 @@ struct EditView: View {
    @State private var tripStarted = Date.distantPast
    @State private var tripCompleted = Date.distantPast
    @State private var firstView = true
-   
+   @State private var showGeneres = false
    var body: some View {
       HStack() {
          Text("Status")
@@ -118,11 +118,19 @@ struct EditView: View {
          } label: {
             Text("City").foregroundStyle(.secondary).bold()
          }
-         NavigationLink {
-            QuetesList(trip: trip)
-         } label: {
-            let count = trip.quetos?.count ?? 0
-            Label("^[\(count) Place](inflect: true)", systemImage: "paperplane.fill")
+         HStack {
+            Button("Geners",systemImage: "flag.filled.and.flag.crossed") {
+               showGeneres.toggle()
+            }
+            .sheet(isPresented: $showGeneres) {
+               GenresView(trip: trip)
+            }
+            NavigationLink {
+               QuetesList(trip: trip)
+            } label: {
+               let count = trip.quetos?.count ?? 0
+               Label("^[\(count) Place](inflect: true)", systemImage: "paperplane.fill")
+            }
          }
          .buttonStyle(.bordered)
          .frame(maxWidth: .infinity, alignment: .trailing)
@@ -134,8 +142,14 @@ struct EditView: View {
             .padding(5)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
           .bold()
-         
-         
+         //importtant, useful
+         if let genres = trip.genres {
+            ViewThatFits {
+               ScrollView(.horizontal,showsIndicators: false) {
+                  GenresStackView(genres: genres)
+               }
+            }
+         }
       }
       .padding()
       .textFieldStyle(.roundedBorder)

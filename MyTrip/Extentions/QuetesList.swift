@@ -99,7 +99,7 @@ struct QuetesList: View {
 #Preview {
    let preview = Preview(Trip.self)
    let trips = Trip.sampleTrips
-   preview.addExamples(examples: trips)
+   preview.addExamples(trips)
    
    return NavigationStack {
    QuetesList(trip: trips[3])

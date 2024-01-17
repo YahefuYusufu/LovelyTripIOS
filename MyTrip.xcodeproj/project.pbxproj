@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350CCE782B5702220092CF5E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE772B5702220092CF5E /* UIColor+Extension.swift */; };
+		350CCE7A2B5702A30092CF5E /* Color+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE792B5702A30092CF5E /* Color+Extention.swift */; };
+		350CCE7C2B57031F0092CF5E /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE7B2B57031F0092CF5E /* Genre.swift */; };
+		350CCE7E2B5704270092CF5E /* GenreSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE7D2B5704270092CF5E /* GenreSamples.swift */; };
+		350CCE832B57069C0092CF5E /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE822B57069C0092CF5E /* GenresView.swift */; };
+		350CCE852B570F980092CF5E /* NewGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE842B570F980092CF5E /* NewGenreView.swift */; };
 		35200F462B48840300FF36E0 /* MyTripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F452B48840300FF36E0 /* MyTripApp.swift */; };
-		35200F482B48840300FF36E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F472B48840300FF36E0 /* MainView.swift */; };
 		35200F4A2B48840300FF36E0 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F492B48840300FF36E0 /* Trip.swift */; };
 		35200F4C2B48840700FF36E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35200F4B2B48840700FF36E0 /* Assets.xcassets */; };
 		35200F4F2B48840700FF36E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */; };
@@ -21,12 +26,18 @@
 		35AD981C2B543784008F9688 /* QuetesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD981B2B543784008F9688 /* QuetesList.swift */; };
 		35D7A9F22B52FCCE000FD735 /* TripSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7A9F12B52FCCE000FD735 /* TripSample.swift */; };
 		35D7A9F42B5300FC000FD735 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */; };
+		35DE7E3D2B586E380008E716 /* GenresStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE7E3C2B586E380008E716 /* GenresStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350CCE772B5702220092CF5E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		350CCE792B5702A30092CF5E /* Color+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extention.swift"; sourceTree = "<group>"; };
+		350CCE7B2B57031F0092CF5E /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		350CCE7D2B5704270092CF5E /* GenreSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSamples.swift; sourceTree = "<group>"; };
+		350CCE822B57069C0092CF5E /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
+		350CCE842B570F980092CF5E /* NewGenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGenreView.swift; sourceTree = "<group>"; };
 		35200F422B48840300FF36E0 /* MyTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35200F452B48840300FF36E0 /* MyTripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripApp.swift; sourceTree = "<group>"; };
-		35200F472B48840300FF36E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		35200F492B48840300FF36E0 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		35200F4B2B48840700FF36E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -39,6 +50,7 @@
 		35AD981B2B543784008F9688 /* QuetesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuetesList.swift; sourceTree = "<group>"; };
 		35D7A9F12B52FCCE000FD735 /* TripSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSample.swift; sourceTree = "<group>"; };
 		35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		35DE7E3C2B586E380008E716 /* GenresStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		350CCE802B5705EC0092CF5E /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				35AD981B2B543784008F9688 /* QuetesList.swift */,
+				358E3D632B4EA77800F8544F /* RitingsView.swift */,
+				350CCE792B5702A30092CF5E /* Color+Extention.swift */,
+				350CCE772B5702220092CF5E /* UIColor+Extension.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		350CCE812B57067E0092CF5E /* Genres */ = {
+			isa = PBXGroup;
+			children = (
+				350CCE822B57069C0092CF5E /* GenresView.swift */,
+				350CCE842B570F980092CF5E /* NewGenreView.swift */,
+				35DE7E3C2B586E380008E716 /* GenresStackView.swift */,
+			);
+			path = Genres;
+			sourceTree = "<group>";
+		};
 		35200F392B48840300FF36E0 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +106,8 @@
 			children = (
 				35200F552B4887C800FF36E0 /* Views */,
 				35200F582B48881C00FF36E0 /* ViewModels */,
+				350CCE812B57067E0092CF5E /* Genres */,
+				350CCE802B5705EC0092CF5E /* Extentions */,
 				35200F592B48886800FF36E0 /* Other */,
 				35200F452B48840300FF36E0 /* MyTripApp.swift */,
 				35200F4D2B48840700FF36E0 /* Preview Content */,
@@ -86,6 +121,7 @@
 				35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */,
 				35D7A9F12B52FCCE000FD735 /* TripSample.swift */,
 				35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */,
+				350CCE7D2B5704270092CF5E /* GenreSamples.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -93,13 +129,10 @@
 		35200F552B4887C800FF36E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				35200F472B48840300FF36E0 /* MainView.swift */,
 				35200F5A2B48939500FF36E0 /* TripListView.swift */,
 				35AD98172B540BC8008F9688 /* TripList.swift */,
 				35200F5C2B489AF000FF36E0 /* NewTripView.swift */,
-				358E3D632B4EA77800F8544F /* RitingsView.swift */,
 				3546B0F92B52CE0A00837BD0 /* EditView.swift */,
-				35AD981B2B543784008F9688 /* QuetesList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +142,7 @@
 			children = (
 				35200F492B48840300FF36E0 /* Trip.swift */,
 				35AD98192B5435A1008F9688 /* Quote.swift */,
+				350CCE7B2B57031F0092CF5E /* Genre.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -192,15 +226,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				35D7A9F42B5300FC000FD735 /* PreviewContainer.swift in Sources */,
-				35200F482B48840300FF36E0 /* MainView.swift in Sources */,
+				350CCE7A2B5702A30092CF5E /* Color+Extention.swift in Sources */,
+				350CCE7E2B5704270092CF5E /* GenreSamples.swift in Sources */,
+				350CCE852B570F980092CF5E /* NewGenreView.swift in Sources */,
 				35200F4A2B48840300FF36E0 /* Trip.swift in Sources */,
 				35200F462B48840300FF36E0 /* MyTripApp.swift in Sources */,
 				358E3D642B4EA77800F8544F /* RitingsView.swift in Sources */,
+				35DE7E3D2B586E380008E716 /* GenresStackView.swift in Sources */,
 				35D7A9F22B52FCCE000FD735 /* TripSample.swift in Sources */,
 				35AD981C2B543784008F9688 /* QuetesList.swift in Sources */,
 				35AD98182B540BC8008F9688 /* TripList.swift in Sources */,
+				350CCE7C2B57031F0092CF5E /* Genre.swift in Sources */,
+				350CCE832B57069C0092CF5E /* GenresView.swift in Sources */,
 				3546B0FA2B52CE0A00837BD0 /* EditView.swift in Sources */,
 				35200F5B2B48939500FF36E0 /* TripListView.swift in Sources */,
+				350CCE782B5702220092CF5E /* UIColor+Extension.swift in Sources */,
 				35200F5D2B489AF000FF36E0 /* NewTripView.swift in Sources */,
 				35AD981A2B5435A1008F9688 /* Quote.swift in Sources */,
 			);
