@@ -11,7 +11,7 @@ struct EditView: View {
    let trip: Trip
    @Environment(\.modelContext) private var context
    @Environment(\.dismiss) private var dismiss
-   @State private var status = Status.inPlan
+   @State private var status: Status
    @State private var satisfiction: Int?
    @State private var country = ""
    @State private var city = ""
@@ -19,8 +19,12 @@ struct EditView: View {
    @State private var tripAdded = Date.distantPast
    @State private var tripStarted = Date.distantPast
    @State private var tripCompleted = Date.distantPast
-   @State private var firstView = true
    @State private var showGeneres = false
+
+   init(trip: Trip) {
+      self.trip = trip
+      _status = State(initialValue: Status(rawValue: trip.status)!)
+   }
    var body: some View {
       HStack() {
          Text("Status")
@@ -40,18 +44,24 @@ struct EditView: View {
       .frame(maxWidth: .infinity)
       .padding(.horizontal,20)
       Divider()
-      VStack {
+      VStack(alignment: .leading) {
          GroupBox {
             LabeledContent {
-               DatePicker("", selection: $tripAdded, displayedComponents: .date)
-            } label: {
-               Text("Trip Added")
-                  .padding()
-                  .background(Color.green)
-                  .foregroundColor(Color.white)
-                  .bold()
-                  .cornerRadius(15)
-            }
+               switch status {
+                  case .inPlan:
+                     DatePicker("", selection: $tripAdded, displayedComponents: .date)
+                  case .inProgress, .completed:
+                     DatePicker("", selection: $tripAdded, in: ...tripStarted, displayedComponents: .date)
+               }
+
+         } label: {
+            Text("Trip Added")
+               .padding()
+               .background(Color.green)
+               .foregroundColor(Color.white)
+               .bold()
+               .cornerRadius(15)
+         }
             if status == .inProgress || status == .completed {
                LabeledContent {
                   DatePicker("", selection: $tripStarted,in: tripAdded..., displayedComponents: .date)
@@ -80,25 +90,22 @@ struct EditView: View {
          .padding()
          .foregroundColor(.secondary)
          .onChange(of: status) { oldValue, newValue in
-            if !firstView {
-               if newValue == .inPlan {
-                  tripStarted = Date.distantPast
-                  tripCompleted = Date.distantPast
-               } else if newValue == .inProgress && oldValue == .completed {
-                  // from completed to inProgress
-                  tripCompleted = Date.distantPast
-               } else if newValue == .inProgress && oldValue == .inPlan {
-                  //Trip has been started
-                  tripStarted = Date.now
-               } else if newValue == .completed && oldValue == .inPlan {
-                  //Forgot to start the trip
-                  tripCompleted = Date.now
-                  tripStarted = tripAdded
-               } else {
-                  //completed
-                  tripCompleted = Date.now
-               }
-               firstView = false
+            if newValue == .inPlan {
+               tripStarted = Date.distantPast
+               tripCompleted = Date.distantPast
+            } else if newValue == .inProgress && oldValue == .completed {
+               // from completed to inProgress
+               tripCompleted = Date.distantPast
+            } else if newValue == .inProgress && oldValue == .inPlan {
+               //Trip has been started
+               tripStarted = Date.now
+            } else if newValue == .completed && oldValue == .inPlan {
+               //Forgot to start the trip
+               tripCompleted = Date.now
+               tripStarted = tripAdded
+            } else {
+               //completed
+               tripCompleted = Date.now
             }
          }
          Divider()
@@ -173,7 +180,7 @@ struct EditView: View {
          }
       }
       .onAppear {
-         status = Status(rawValue: trip.status)!
+//         status = Status(rawValue: trip.status)!
          satisfiction = trip.satisfaction
          country = trip.country
          city = trip.city

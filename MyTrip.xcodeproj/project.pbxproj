@@ -104,12 +104,13 @@
 		35200F442B48840300FF36E0 /* MyTrip */ = {
 			isa = PBXGroup;
 			children = (
+				35200F452B48840300FF36E0 /* MyTripApp.swift */,
 				35200F552B4887C800FF36E0 /* Views */,
 				35200F582B48881C00FF36E0 /* ViewModels */,
 				350CCE812B57067E0092CF5E /* Genres */,
 				350CCE802B5705EC0092CF5E /* Extentions */,
 				35200F592B48886800FF36E0 /* Other */,
-				35200F452B48840300FF36E0 /* MyTripApp.swift */,
+				35D8D8DE2B591E7900ADD80B /* Previews */,
 				35200F4D2B48840700FF36E0 /* Preview Content */,
 			);
 			path = MyTrip;
@@ -119,9 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */,
-				35D7A9F12B52FCCE000FD735 /* TripSample.swift */,
-				35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */,
-				350CCE7D2B5704270092CF5E /* GenreSamples.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -153,6 +151,16 @@
 				35200F4B2B48840700FF36E0 /* Assets.xcassets */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		35D8D8DE2B591E7900ADD80B /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				35D7A9F12B52FCCE000FD735 /* TripSample.swift */,
+				35D7A9F32B5300FC000FD735 /* PreviewContainer.swift */,
+				350CCE7D2B5704270092CF5E /* GenreSamples.swift */,
+			);
+			path = Previews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
