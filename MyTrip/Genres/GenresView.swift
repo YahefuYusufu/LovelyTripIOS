@@ -51,7 +51,7 @@ struct GenresView: View {
                               .foregroundStyle(genre.haxColor)
                            }
                         }
-                           Text(genre.name)
+                        Text(genre.name)
                      }
                   }
                   .onDelete(perform: { indexSet in

@@ -12,6 +12,8 @@ struct TripList: View {
    @Environment(\.modelContext) private var context
    @Query private var trips: [Trip]
    @State var selectedTrip: Trip?
+   @State private var selectedCityPicData: Data?
+   
    
    init(sorting: Sorting, filterString: String) {
       let sortDescriptors: [SortDescriptor<Trip>] = switch sorting {
@@ -37,25 +39,39 @@ struct TripList: View {
       //      Group {
       
       //      List {
-      ScrollView{
-         LazyVGrid(columns: adaptiveColumn, spacing: 15) {
+      ScrollView {
+         LazyVGrid(columns: adaptiveColumn, spacing: 5) {
             ForEach(trips) { trip in
                NavigationLink {
                   EditView(trip:trip)
                } label: {
-                  VStack {
-                     HStack(){
-                        Spacer()
+                  VStack(spacing:5){
+                     
+                     VStack(alignment: .trailing, spacing: 3) {
                         Button("",systemImage: "trash.fill",role: .destructive) {
                            context.delete(trip)
-                     }
+                        }
                         .foregroundStyle(Color.gray)
-                       
+                        
+                        Group {
+                           if let cityPicture = trip.cityPicture,
+                              let uiImage = UIImage(data: cityPicture) {
+                              Image(uiImage: uiImage)
+                                 .resizable()
+                                 .scaledToFill()
+                                 .frame(width: 150, height: 120)
+                                 .cornerRadius(10)
+                              
+                           } else {
+                              Image(systemName: "photo")
+                                 .resizable()
+                                 .scaledToFit()
+                                 .frame(width: 150, height: 140)
+                                 .tint(.secondary)
+                           }
+                        }
                      }
-                     Image("firstPage")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 98, alignment: .top)
+                     
                      HStack(){
                         Text(trip.country).bold()
                         Text(trip.city).foregroundStyle(.secondary).font(.caption)
@@ -76,24 +92,18 @@ struct TripList: View {
                               GenresStackView(genres: genres)
                            }
                         }
+                        .padding(.horizontal,5)
                      }
                   }
                }
                
                .frame(width:180,height: 240, alignment: .center)
                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .quaternarySystemFill), lineWidth: 2))
-               .padding(5)
-            }
+               .padding(10)
+            }  
          }
       }
    }
-   
-//   func deleteTrip(_ indexSet: IndexSet) {
-//      indexSet.forEach { index in
-//         let trip = trips[index]
-//         context.delete(trip)
-//      }
-//   }
 }
 
 #Preview {

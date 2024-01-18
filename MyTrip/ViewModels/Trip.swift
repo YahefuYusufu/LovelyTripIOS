@@ -24,6 +24,8 @@ class Trip {
    var quetos: [Quote]?
    @Relationship(inverse: \Genre.trips)
    var genres: [Genre]?
+   @Attribute(.externalStorage)
+   var cityPicture: Data?
    
    init(
       country: String,
@@ -46,7 +48,7 @@ class Trip {
       self.totalDays = totalDays
       self.satisfaction = satisfaction
       self.status = status.rawValue
-
+      
    }
    
    
