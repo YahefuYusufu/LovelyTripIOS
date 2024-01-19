@@ -50,6 +50,7 @@ struct TripListView: View {
                   .presentationCornerRadius(28)
             }
       }
+      .padding(.trailing)
    }
 }
 #Preview {
