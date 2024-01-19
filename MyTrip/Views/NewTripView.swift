@@ -36,6 +36,7 @@ struct NewTripView: View {
                      dismiss()
                   } label: {
                      Image(systemName: "xmark.octagon.fill")
+                        .foregroundStyle(Color.green)
                   }
                   .imageScale(.large)
                }

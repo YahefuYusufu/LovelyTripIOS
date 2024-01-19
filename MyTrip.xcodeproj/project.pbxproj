@@ -15,12 +15,13 @@
 		350CCE852B570F980092CF5E /* NewGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCE842B570F980092CF5E /* NewGenreView.swift */; };
 		35200F462B48840300FF36E0 /* MyTripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F452B48840300FF36E0 /* MyTripApp.swift */; };
 		35200F4A2B48840300FF36E0 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F492B48840300FF36E0 /* Trip.swift */; };
-		35200F4C2B48840700FF36E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35200F4B2B48840700FF36E0 /* Assets.xcassets */; };
 		35200F4F2B48840700FF36E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */; };
 		35200F5B2B48939500FF36E0 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F5A2B48939500FF36E0 /* TripListView.swift */; };
 		35200F5D2B489AF000FF36E0 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35200F5C2B489AF000FF36E0 /* NewTripView.swift */; };
 		3546B0FA2B52CE0A00837BD0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546B0F92B52CE0A00837BD0 /* EditView.swift */; };
+		356204BF2B5A76F600C8C667 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356204BE2B5A76F600C8C667 /* Launch Screen.storyboard */; };
 		358E3D642B4EA77800F8544F /* RitingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358E3D632B4EA77800F8544F /* RitingsView.swift */; };
+		35A789BE2B5A6A3800EDABBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A789BD2B5A6A3800EDABBD /* Assets.xcassets */; };
 		35AD98182B540BC8008F9688 /* TripList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD98172B540BC8008F9688 /* TripList.swift */; };
 		35AD981A2B5435A1008F9688 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD98192B5435A1008F9688 /* Quote.swift */; };
 		35AD981C2B543784008F9688 /* QuetesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD981B2B543784008F9688 /* QuetesList.swift */; };
@@ -39,12 +40,14 @@
 		35200F422B48840300FF36E0 /* MyTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35200F452B48840300FF36E0 /* MyTripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripApp.swift; sourceTree = "<group>"; };
 		35200F492B48840300FF36E0 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		35200F4B2B48840700FF36E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35200F4E2B48840700FF36E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35200F5A2B48939500FF36E0 /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		35200F5C2B489AF000FF36E0 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		3546B0F92B52CE0A00837BD0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		356204BE2B5A76F600C8C667 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		358E3D632B4EA77800F8544F /* RitingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitingsView.swift; sourceTree = "<group>"; };
+		35A789BD2B5A6A3800EDABBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35A789BF2B5A6BBB00EDABBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		35AD98172B540BC8008F9688 /* TripList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList.swift; sourceTree = "<group>"; };
 		35AD98192B5435A1008F9688 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		35AD981B2B543784008F9688 /* QuetesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuetesList.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		35200F442B48840300FF36E0 /* MyTrip */ = {
 			isa = PBXGroup;
 			children = (
+				35A789BF2B5A6BBB00EDABBD /* Info.plist */,
 				35200F452B48840300FF36E0 /* MyTripApp.swift */,
 				35200F552B4887C800FF36E0 /* Views */,
 				35200F582B48881C00FF36E0 /* ViewModels */,
@@ -148,7 +152,8 @@
 		35200F592B48886800FF36E0 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				35200F4B2B48840700FF36E0 /* Assets.xcassets */,
+				35A789BD2B5A6A3800EDABBD /* Assets.xcassets */,
+				356204BE2B5A76F600C8C667 /* Launch Screen.storyboard */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -221,8 +226,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356204BF2B5A76F600C8C667 /* Launch Screen.storyboard in Resources */,
+				35A789BE2B5A6A3800EDABBD /* Assets.xcassets in Resources */,
 				35200F4F2B48840700FF36E0 /* Preview Assets.xcassets in Resources */,
-				35200F4C2B48840700FF36E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,13 +393,14 @@
 				DEVELOPMENT_TEAM = 73P5VLU884;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyTrip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LovelyTrips;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,13 +425,14 @@
 				DEVELOPMENT_TEAM = 73P5VLU884;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyTrip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LovelyTrips;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

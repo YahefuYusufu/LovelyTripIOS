@@ -158,7 +158,7 @@ struct EditView: View {
          }
          .padding(.top,5)
          HStack {
-            Button("Best Place",systemImage: "flag.filled.and.flag.crossed") {
+            Button("Like",systemImage: "flag.filled.and.flag.crossed") {
                showGeneres.toggle()
             }
             .sheet(isPresented: $showGeneres) {

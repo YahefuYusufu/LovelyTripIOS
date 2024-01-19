@@ -22,8 +22,6 @@ struct TripListView: View {
    @State private var createNewTrip = false
    @State private  var sorting = Sorting.status
    @State private var filter = ""
-   @Environment(\.horizontalSizeClass) var horizontalSizeClass
-   @Environment(\.verticalSizeClass) var verticalSizeClass
    
    var body: some View {
       NavigationStack {
@@ -43,6 +41,7 @@ struct TripListView: View {
                } label: {
                   Image(systemName: "plus.circle.fill")
                      .imageScale(.large)
+                     .foregroundStyle(Color.green)
                }
             }
             .sheet(isPresented: $createNewTrip) {
@@ -50,18 +49,6 @@ struct TripListView: View {
                   .presentationDetents([.medium,.fraction(0.75)])
                   .presentationCornerRadius(28)
             }
-      }
-      .padding(devicePadding())
-      
-   }
-   
-   private func devicePadding() -> EdgeInsets {
-      if horizontalSizeClass == .compact && verticalSizeClass == .regular {
-         // iPad portrait orientation
-         return EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
-      } else {
-         // Default padding for other orientations or devices
-         return EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
       }
    }
 }

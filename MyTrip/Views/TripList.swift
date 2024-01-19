@@ -39,68 +39,75 @@ struct TripList: View {
       //      Group {
       
       //      List {
-      ScrollView {
-         LazyVGrid(columns: adaptiveColumn, spacing: 5) {
-            ForEach(trips) { trip in
-               NavigationLink {
-                  EditView(trip:trip)
-               } label: {
-                  VStack(spacing:5){
-                     
-                     VStack(alignment: .trailing, spacing: 3) {
-                        Button("",systemImage: "trash.fill",role: .destructive) {
-                           context.delete(trip)
-                        }
-                        .foregroundStyle(Color.gray)
-                        
-                        Group {
-                           if let cityPicture = trip.cityPicture,
-                              let uiImage = UIImage(data: cityPicture) {
-                              Image(uiImage: uiImage)
-                                 .resizable()
-                                 .scaledToFill()
-                                 .frame(width: 150, height: 120)
-                                 .cornerRadius(10)
+      Group {
+         if trips.isEmpty {
+            ContentUnavailableView("Enter your first Trip.", systemImage: "figure.yoga")
+               .foregroundStyle(Color.green)
+         } else {
+            ScrollView {
+               LazyVGrid(columns: adaptiveColumn, spacing: 5) {
+                  ForEach(trips) { trip in
+                     NavigationLink {
+                        EditView(trip:trip)
+                     } label: {
+                        VStack(spacing:5){
+                           
+                           VStack(alignment: .trailing, spacing: 3) {
+                              Button("",systemImage: "trash.fill",role: .destructive) {
+                                 context.delete(trip)
+                              }
+                              .foregroundStyle(Color.gray)
                               
-                           } else {
-                              Image(systemName: "photo")
-                                 .resizable()
-                                 .scaledToFit()
-                                 .frame(width: 150, height: 140)
-                                 .tint(.secondary)
+                              Group {
+                                 if let cityPicture = trip.cityPicture,
+                                    let uiImage = UIImage(data: cityPicture) {
+                                    Image(uiImage: uiImage)
+                                       .resizable()
+                                       .scaledToFill()
+                                       .frame(width: 150, height: 120)
+                                       .cornerRadius(10)
+                                    
+                                 } else {
+                                    Image(systemName: "photo")
+                                       .resizable()
+                                       .scaledToFit()
+                                       .frame(width: 150, height: 140)
+                                       .tint(.secondary)
+                                 }
+                              }
+                           }
+                           
+                           HStack(){
+                              Text(trip.country).bold()
+                              Text(trip.city).foregroundStyle(.secondary).font(.caption)
+                           }
+                           if let satisfaction = trip.satisfaction {
+                              HStack {
+                                 ForEach(1..<satisfaction, id: \.self) { _ in
+                                    Image(systemName: "heart.fill")
+                                       .imageScale(.medium)
+                                       .foregroundStyle(Color.yellow)
+                                       .padding(.vertical,3)
+                                 }
+                              }
+                           }
+                           if let genres = trip.genres {
+                              ViewThatFits {
+                                 ScrollView(.horizontal,showsIndicators: false) {
+                                    GenresStackView(genres: genres)
+                                 }
+                              }
+                              .padding(.horizontal,5)
                            }
                         }
                      }
                      
-                     HStack(){
-                        Text(trip.country).bold()
-                        Text(trip.city).foregroundStyle(.secondary).font(.caption)
-                     }
-                     if let satisfaction = trip.satisfaction {
-                        HStack {
-                           ForEach(1..<satisfaction, id: \.self) { _ in
-                              Image(systemName: "heart.fill")
-                                 .imageScale(.medium)
-                                 .foregroundStyle(Color.green)
-                                 .padding(.vertical,3)
-                           }
-                        }
-                     }
-                     if let genres = trip.genres {
-                        ViewThatFits {
-                           ScrollView(.horizontal,showsIndicators: false) {
-                              GenresStackView(genres: genres)
-                           }
-                        }
-                        .padding(.horizontal,5)
-                     }
+                     .frame(width:180,height: 240, alignment: .center)
+                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .quaternarySystemFill), lineWidth: 2))
+                     .padding(10)
                   }
                }
-               
-               .frame(width:180,height: 240, alignment: .center)
-               .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .quaternarySystemFill), lineWidth: 2))
-               .padding(10)
-            }  
+            }
          }
       }
    }
